@@ -9,7 +9,6 @@ export const getData = () => dispatch => {
     axios
         .get(`http://localhost:3333/smurfs`)
         .then(res => {
-            // console.log(res)
             dispatch({ type: FETCH_SUCCESS, payload: res.data})
         })
         .catch(err => {
@@ -26,14 +25,31 @@ export const addSmurf = info => dispatch => {
     dispatch({ type: ADD_START });
       axios.post(`http://localhost:3333/smurfs`, info)
           .then(res => {
-            // console.log("RESPONSE", res)
             dispatch ({ type: ADD_SUCCESS, payload: res.data});
           })
           .catch(err => {
-                // console.log(err)
               dispatch ({ type: ADD_FAILURE, payload: err});
           })   
 }
+
+// export const DELETE_START = 'DELETE_START';
+// export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+// export const DELETE_FAILURE = 'DELETE_FAILURE';
+
+// export const deleteSmurf = id => dispatch => {
+//     dispatch({ type: DELETE_START });
+//       axios.delete(`http://localhost:3333/smurfs/${id}`)
+//           .then(res => {
+//             dispatch ({ type: DELETE_SUCCESS, payload: res.data.id});
+//           })
+//           .catch(err => {
+//               dispatch ({ type: DELETE_FAILURE, payload: err});
+//           })   
+// }
+
+
+
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.

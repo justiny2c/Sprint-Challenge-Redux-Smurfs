@@ -8,6 +8,17 @@ class Smurfs extends React.Component {
         this.props.getData();
     }
 
+    // deleteSmurf = e => {
+    //     e.preventDefault();
+    //     {this.props.smurfs.map(smurf => {
+    //         return (
+    //             this.props.deleteSmurf(smurf.id)
+    //         )
+    //     }
+
+    //     )}
+    // }
+
     render(){
         return (
             <div>
@@ -16,7 +27,11 @@ class Smurfs extends React.Component {
                     <div>
                     <h3>{smurf.name}</h3>
                     <p>age: {smurf.age}</p>
-                    <p>height: {smurf.height}</p>                   
+                    <p>height: {smurf.height}</p>
+{/* 
+                    <button
+                        onClick={this.deleteSmurf}>X</button>          */}
+
                     </div> )
                 })}
 

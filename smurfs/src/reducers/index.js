@@ -4,7 +4,11 @@ import {
   FETCH_FAILURE,  
   ADD_START,
   ADD_SUCCESS,
-  ADD_FAILURE} from "../actions"
+  ADD_FAILURE,
+  // DELETE_START,
+  // DELETE_SUCCESS,
+  // DELETE_FAILURE
+  } from "../actions"
 
 const initialState = {
    smurfs: [],
@@ -61,6 +65,28 @@ export const smurfReducer = (state = initialState, action) => {
           error: action.payload
       }
   }
+  // case DELETE_START: {
+  //     return {
+  //         ...state,
+  //         error: "",
+  //         deletingSmurfs: false
+  //     }
+  // }
+  // case DELETE_SUCCESS: {
+  //     return {
+  //         ...state,
+  //         error: "",
+  //         deletingSmurfs: true,
+  //         smurfs: action.payload
+  //     }
+  // }
+  // case DELETE_FAILURE: {
+  //     return {
+  //         ...state,
+  //         deletingSmurfs: false,
+  //         error: action.payload
+  //     }
+  // }
     default:
         return state;
 }
