@@ -11,10 +11,13 @@
     Component state is confined and within that component. Cannot be accessed outside without being passed. Application state is the state of the entire application. 
 
 4.  What is middleware?
-    Middleware is the bridge between action and reducer.
+    
 
 5.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-    Middleware...?
+    Middleware is the bridge between action and reducer. 
+    
+    Asychronous...
 
 6.  Which `react-redux` method links up our `components` with our `redux store`?
     mapStateToProps
+    connect

@@ -32,20 +32,21 @@ export const addSmurf = info => dispatch => {
           })   
 }
 
-// export const DELETE_START = 'DELETE_START';
-// export const DELETE_SUCCESS = 'DELETE_SUCCESS';
-// export const DELETE_FAILURE = 'DELETE_FAILURE';
+export const DELETE_START = 'DELETE_START';
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const DELETE_FAILURE = 'DELETE_FAILURE';
 
-// export const deleteSmurf = id => dispatch => {
-//     dispatch({ type: DELETE_START });
-//       axios.delete(`http://localhost:3333/smurfs/${id}`)
-//           .then(res => {
-//             dispatch ({ type: DELETE_SUCCESS, payload: res.data});
-//           })
-//           .catch(err => {
-//               dispatch ({ type: DELETE_FAILURE, payload: err});
-//           })   
-// }
+export const deleteSmurf = id => dispatch => {
+    dispatch({ type: DELETE_START });
+      axios.delete(`http://localhost:3333/smurfs/${id}`)
+          .then(res => {
+            console.log("ARRAY", res)
+            dispatch ({ type: DELETE_SUCCESS, payload: res.data});
+          })
+          .catch(err => {
+              dispatch ({ type: DELETE_FAILURE, payload: err});
+          })   
+}
 
 
 
