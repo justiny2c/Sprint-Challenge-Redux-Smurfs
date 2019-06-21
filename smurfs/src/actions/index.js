@@ -9,7 +9,7 @@ export const getData = () => dispatch => {
     axios
         .get(`http://localhost:3333/smurfs`)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             dispatch({ type: FETCH_SUCCESS, payload: res.data})
         })
         .catch(err => {
@@ -18,28 +18,22 @@ export const getData = () => dispatch => {
 }
 
 
-// export const LOGIN_START = 'LOGIN_START';
-// export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-// export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const ADD_START = 'ADD_START';
+export const ADD_SUCCESS = 'ADD_SUCCESS';
+export const ADD_FAILURE = 'ADD_FAILURE';
 
-// export const loggingIn = creds => dispatch => {
-//     dispatch({ type: LOGIN_START });
-//     return (
-//         axios.post(`http://localhost:5000/api/login`, creds)
-//             .then(res => {
-//                 // console.log("My toe", res)
-//                 localStorage.setItem("token", res.data.payload);
-//                 dispatch({ type: LOGIN_SUCCESS});
-//                 return true;
-//             })
-//             .catch(err => {
-//                 // console.log(err)
-//                 dispatch ({ type: LOGIN_FAILURE, payload: err});
-//                 return err.response
-//             })
-//     )
-// }
-
+export const addSmurf = info => dispatch => {
+    dispatch({ type: ADD_START });
+      axios.post(`http://localhost:3333/smurfs`, info)
+          .then(res => {
+            // console.log("RESPONSE", res)
+            dispatch ({ type: ADD_SUCCESS, payload: res.data});
+          })
+          .catch(err => {
+                // console.log(err)
+              dispatch ({ type: ADD_FAILURE, payload: err});
+          })   
+}
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
